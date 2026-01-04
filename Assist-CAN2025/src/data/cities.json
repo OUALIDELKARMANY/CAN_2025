@@ -1,0 +1,196 @@
+{
+    "cities": [
+        {
+            "id": 1,
+            "nom": "Casablanca",
+            "description": "La capitale économique du Maroc, ville cosmopolite et moderne. Plus grande ville du pays avec une richesse culturelle exceptionnelle.",
+            "image": "data:image/webp;base64,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",
+            "population": "3.7 millions",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Mosquée Hassan II",
+                    "description": "Monument emblématique avec le plus haut minaret du monde (210m). Vue spectaculaire sur l'océan Atlantique.",
+                    "image": "https://th.bing.com/th/id/OIP.9YAR6M1Q7uxbVSKSwD8WXAHaFR?w=262&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+                    "type": "Monument religieux"
+                },
+                {
+                    "nom": "Corniche Ain Diab",
+                    "description": "Front de mer animé avec restaurants, cafés et clubs. Parfait pour se détendre après les matchs.",
+                    "image": "https://th.bing.com/th/id/OIP.LLk5UT_4JJoXCEbJQVCB6AHaEk?w=301&h=185&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+                    "type": "Promenade"
+                },
+                {
+                    "nom": "Ancienne Médina",
+                    "description": "Quartier historique avec souks traditionnels et architecture authentique.",
+                    "image": "https://th.bing.com/th/id/OIP.jtEqa21Z9zxOaQGravZEUQHaD4?w=305&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+                    "type": "Quartier historique"
+                }
+            ],
+            "conseils": [
+                "Utilisez les taxis ou le tramway pour vous déplacer",
+                "Goûtez au poisson frais sur la corniche",
+                "Visitez la mosquée Hassan II (visites guidées disponibles)"
+            ]
+        },
+        {
+            "id": 2,
+            "nom": "Rabat",
+            "description": "Capitale politique et administrative du Maroc. Ville classée au patrimoine mondial de l'UNESCO, mélange parfait de modernité et tradition.",
+            "image": "https://th.bing.com/th/id/R.aefc99e76ea7ef3fcd58074985aa19f7?rik=1akQTsbJAHy2Lg&pid=ImgRaw&r=0",
+            "population": "1.9 million",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Tour Hassan",
+                    "description": "Minaret emblématique du 12ème siècle et mausolée Mohammed V. Site historique majeur.",
+                    "image": "https://tse3.mm.bing.net/th/id/OIP.ONzY2-cAinLZfkt5kA4ioAHaFX?rs=1&pid=ImgDetMain&o=7&rm=3",
+                    "type": "Monument historique"
+                },
+                {
+                    "nom": "Kasbah des Oudayas",
+                    "description": "Forteresse médiévale avec ruelles bleues et blanches. Vue panoramique sur l'océan.",
+                    "image": "https://images.unsplash.com/photo-1585144860137-5ed80c4d3f63?auto=format&fit=crop&w=1600&q=80",
+                    "type": "Site historique"
+                },
+                {
+                    "nom": "Chellah",
+                    "description": "Nécropole antique avec ruines romaines et jardins luxuriants.",
+                    "image": "https://images.unsplash.com/photo-1505849875529-31d6f4f5c7e3?auto=format&fit=crop&w=1600&q=80",
+                    "type": "Ruines archéologiques"
+                }
+            ],
+            "conseils": [
+                "Le tramway relie tous les sites principaux",
+                "Promenez-vous dans les jardins andalous",
+                "Dégustez un thé à la menthe dans la Kasbah"
+            ]
+        },
+        {
+            "id": 3,
+            "nom": "Marrakech",
+            "description": "La perle du Sud, ville impériale légendaire. Connue pour ses souks, palais et la célèbre place Jemaa el-Fna.",
+            "image": "https://photos.mandarinoriental.com/is/image/MandarinOriental/marrakech-shutterstock_261112328",
+            "population": "1.3 million",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Place Jemaa el-Fna",
+                    "description": "Cœur battant de Marrakech. Spectacles de rue, restaurants et ambiance unique jour et nuit.",
+                    "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80",
+                    "type": "Place publique"
+                },
+                {
+                    "nom": "Jardin Majorelle",
+                    "description": "Jardin botanique aux couleurs éclatantes, ancienne propriété d'Yves Saint Laurent.",
+                    "image": "https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=1600&q=80",
+                    "type": "Jardin"
+                },
+                {
+                    "nom": "Palais de la Bahia",
+                    "description": "Magnifique palais du 19ème siècle avec jardins et architecture mauresque.",
+                    "image": "https://th.bing.com/th/id/OIP.1SnCTcarJrgS_3FH9LE8CAHaFj?w=244&h=183&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+                    "type": "Palais"
+                }
+            ],
+            "conseils": [
+                "Négociez les prix dans les souks",
+                "Réservez un riad traditionnel",
+                "Évitez la chaleur de midi en été"
+            ]
+        },
+        {
+            "id": 4,
+            "nom": "Agadir",
+            "description": "Station balnéaire moderne sur l'Atlantique. Plages magnifiques, climat doux toute l'année et ambiance décontractée.",
+            "image": "https://cdn.getyourguide.com/img/location/5ce4150139551.jpeg/88.jpg",
+            "population": "900,000",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Plage d'Agadir",
+                    "description": "10 km de sable fin avec promenade aménagée. Idéal pour la détente et les sports nautiques.",
+                    "image": "https://mediaim.expedia.com/destination/1/fce12b04208a70d76ded7df136328ff9.jpg",
+                    "type": "Plage"
+                },
+                {
+                    "nom": "Souk El Had",
+                    "description": "Plus grand marché de la région. Produits locaux, artisanat et ambiance authentique.",
+                    "image": "https://i.pinimg.com/736x/18/b8/7e/18b87e3b17f8258b7609a9047758470f.jpg",
+                    "type": "Marché"
+                },
+                {
+                    "nom": "Kasbah d'Agadir Oufella",
+                    "description": "Ruines historiques avec vue panoramique sur la ville et l'océan.",
+                    "image": "https://visite-agadir.com/wp-content/uploads/2025/03/La-Kasbah-dAgadir-Oufella.jpeg",
+                    "type": "Site historique"
+                }
+            ],
+            "conseils": [
+                "Profitez des activités nautiques",
+                "Goûtez aux fruits de mer frais",
+                "Visitez le souk le dimanche (jour principal)"
+            ]
+        },
+        {
+            "id": 5,
+            "nom": "Fès",
+            "description": "Ville impériale et spirituelle, la plus ancienne des villes impériales. Médina médiévale classée UNESCO, centre culturel et artisanal.",
+            "image": "https://www.infomaroc.net/wp-content/uploads/2022/01/fes-2.jpg",
+            "population": "1.2 million",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Médina de Fès el-Bali",
+                    "description": "Plus grande médina médiévale du monde. Labyrinthe de 9,000 ruelles, patrimoine UNESCO.",
+                    "image": "https://www.fodors.com/wp-content/uploads/2019/06/shutterstock_14345080460-1600x1068.jpg",
+                    "type": "Quartier historique"
+                },
+                {
+                    "nom": "Université Al Quaraouiyine",
+                    "description": "Plus ancienne université du monde en activité continue (fondée en 859).",
+                    "image": "https://static.lematin.ma/files/lematin/images/articles/2020/09/beead88d97dc8f681cb9cf6d93b45cd2.jpg",
+                    "type": "Monument historique"
+                },
+                {
+                    "nom": "Tanneries Chouara",
+                    "description": "Tanneries traditionnelles colorées, métier ancestral préservé.",
+                    "image": "https://thinkmorocco.com/wp-content/uploads/2020/03/Chouara-Tannery.jpg",
+                    "type": "Artisanat"
+                }
+            ],
+            "conseils": [
+                "Engagez un guide pour la médina",
+                "Portez des chaussures confortables",
+                "Visitez les ateliers d'artisans"
+            ]
+        },
+        {
+            "id": 6,
+            "nom": "Tanger",
+            "description": "Porte de l'Afrique, ville du détroit entre deux mers et deux continents. Histoire cosmopolite et ambiance internationale unique.",
+            "image": "https://www.medias24.com/content/uploads/2021/06/18/Tanger-confinement-MAP.jpg",
+            "population": "1.1 million",
+            "lieuxTouristiques": [
+                {
+                    "nom": "Cap Spartel",
+                    "description": "Point de rencontre entre Méditerranée et Atlantique. Phare historique et vues spectaculaires.",
+                    "image": "https://stayhere.ma/wp-content/uploads/2023/08/Explorez-le-Cap-Spartel-Tanger-Guide-Complet-pour-un-Sejour-Inoubliable-1140x760.webp",
+                    "type": "Site naturel"
+                },
+                {
+                    "nom": "Grottes d'Hercule",
+                    "description": "Grottes mythologiques avec ouverture en forme de carte d'Afrique.",
+                    "image": "https://www.dorialexploratrice.com/images/tourisme/grottes-hercule/grottes-hercules-tanger-37.jpg",
+                    "type": "Site naturel"
+                },
+                {
+                    "nom": "Médina de Tanger",
+                    "description": "Quartier historique avec influences européennes et africaines mélangées.",
+                    "image": "https://baladodecouverte.com/upload_pic/resized_1546790283.jpg",
+                    "type": "Quartier historique"
+                }
+            ],
+            "conseils": [
+                "Prenez le ferry pour voir l'Espagne",
+                "Visitez le café Hafa (vue sur le détroit)",
+                "Explorez la nouvelle marina"
+            ]
+        }
+    ]
+}

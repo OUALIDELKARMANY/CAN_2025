@@ -1,0 +1,100 @@
+{
+  "matches": [
+    {
+      "id": 1,
+      "equipe1": "Maroc",
+      "equipe2": "Zambie",
+      "drapeau1": "🇲🇦",
+      "drapeau2": "🇿🇲",
+      "date": "2025-06-15T20:00:00",
+      "ville": "Casablanca",
+      "stade": "Stade Mohamed V",
+      "phase": "Groupe A",
+      "score": null
+    },
+    {
+      "id": 2,
+      "equipe1": "Sénégal",
+      "equipe2": "Tanzanie",
+      "drapeau1": "🇸🇳",
+      "drapeau2": "🇹🇿",
+      "date": "2025-06-15T17:00:00",
+      "ville": "Rabat",
+      "stade": "Complexe Sportif Prince Moulay Abdellah",
+      "phase": "Groupe A",
+      "score": null
+    },
+    {
+      "id": 3,
+      "equipe1": "Égypte",
+      "equipe2": "Ghana",
+      "drapeau1": "🇪🇬",
+      "drapeau2": "🇬🇭",
+      "date": "2025-06-16T20:00:00",
+      "ville": "Marrakech",
+      "stade": "Grand Stade de Marrakech",
+      "phase": "Groupe B",
+      "score": null
+    },
+    {
+      "id": 4,
+      "equipe1": "Nigeria",
+      "equipe2": "Guinée",
+      "drapeau1": "🇳🇬",
+      "drapeau2": "🇬🇳",
+      "date": "2025-06-16T17:00:00",
+      "ville": "Agadir",
+      "stade": "Stade Adrar",
+      "phase": "Groupe B",
+      "score": null
+    },
+    {
+      "id": 5,
+      "equipe1": "Cameroun",
+      "equipe2": "Burkina Faso",
+      "drapeau1": "🇨🇲",
+      "drapeau2": "🇧🇫",
+      "date": "2025-06-17T20:00:00",
+      "ville": "Fès",
+      "stade": "Stade de Fès",
+      "phase": "Groupe C",
+      "score": null
+    },
+    {
+      "id": 6,
+      "equipe1": "Côte d'Ivoire",
+      "equipe2": "Mali",
+      "drapeau1": "🇨🇮",
+      "drapeau2": "🇲🇱",
+      "date": "2025-06-17T17:00:00",
+      "ville": "Tanger",
+      "stade": "Stade Ibn Batouta",
+      "phase": "Groupe C",
+      "score": null
+    },
+    {
+      "id": 7,
+      "equipe1": "Algérie",
+      "equipe2": "Tunisie",
+      "drapeau1": "🇩🇿",
+      "drapeau2": "🇹🇳",
+      "date": "2025-06-18T20:00:00",
+      "ville": "Casablanca",
+      "stade": "Stade Mohamed V",
+      "phase": "Groupe D",
+      "score": null
+    },
+    {
+      "id": 8,
+      "equipe1": "Afrique du Sud",
+      "equipe2": "Angola",
+      "drapeau1": "🇿🇦",
+      "drapeau2": "🇦🇴",
+      "date": "2025-06-18T17:00:00",
+      "ville": "Rabat",
+      "stade": "Complexe Sportif Prince Moulay Abdellah",
+      "phase": "Groupe D",
+      "score": null
+    }
+  ]
+}

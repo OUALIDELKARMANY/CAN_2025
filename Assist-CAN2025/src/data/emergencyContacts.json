@@ -1,0 +1,91 @@
+{
+    "urgence": {
+        "police": "19",
+        "ambulance": "15",
+        "pompiers": "15",
+        "gendarmerie": "177",
+        "protection_civile": "150"
+    },
+    "ambassades": [
+        {
+            "pays": "France",
+            "telephone": "+212 537 68 97 00",
+            "ville": "Rabat"
+        },
+        {
+            "pays": "Belgique",
+            "telephone": "+212 537 26 74 00",
+            "ville": "Rabat"
+        },
+        {
+            "pays": "Suisse",
+            "telephone": "+212 537 26 80 30",
+            "ville": "Rabat"
+        },
+        {
+            "pays": "Canada",
+            "telephone": "+212 537 54 49 49",
+            "ville": "Rabat"
+        }
+    ],
+    "conseilsSecurite": [
+        "Gardez vos objets de valeur en sécurité",
+        "Utilisez les taxis officiels (petits taxis blancs en ville)",
+        "Restez hydraté, surtout pendant les matchs",
+        "Respectez les coutumes locales",
+        "Évitez les zones isolées la nuit",
+        "Ayez toujours une copie de votre passeport",
+        "Souscrivez une assurance voyage"
+    ],
+    "reglesStades": [
+        "Arrivez au moins 1h avant le coup d'envoi",
+        "Pas d'objets dangereux ou bouteilles",
+        "Respectez les autres supporters",
+        "Suivez les consignes du personnel de sécurité",
+        "Les fumigènes et pétards sont interdits",
+        "Gardez votre billet jusqu'à la sortie"
+    ],
+    "faq": [
+        {
+            "question": "Ai-je besoin d'un visa pour le Maroc ?",
+            "reponse": "Les citoyens de nombreux pays (UE, USA, Canada, etc.) peuvent entrer sans visa pour 90 jours. Vérifiez les exigences pour votre nationalité."
+        },
+        {
+            "question": "Quelle est la monnaie au Maroc ?",
+            "reponse": "Le Dirham marocain (MAD). 1 EUR ≈ 10-11 MAD. Les distributeurs sont disponibles partout."
+        },
+        {
+            "question": "Quelle langue parle-t-on ?",
+            "reponse": "Arabe et Berbère sont officielles. Le français est largement parlé, l'anglais dans les zones touristiques."
+        },
+        {
+            "question": "Comment se déplacer entre les villes ?",
+            "reponse": "Train (ONCF) pour les grandes villes, bus (CTM, Supratours) ou location de voiture. Le train est rapide et confortable."
+        },
+        {
+            "question": "Puis-je boire l'eau du robinet ?",
+            "reponse": "Il est recommandé de boire de l'eau en bouteille. Disponible partout à prix abordable."
+        },
+        {
+            "question": "Quel est le climat pendant la CAN ?",
+            "reponse": "Juin : chaud et sec (25-35°C). Agréable sur la côte, plus chaud à Marrakech. Prévoyez crème solaire et chapeau."
+        },
+        {
+            "question": "Les cartes bancaires sont-elles acceptées ?",
+            "reponse": "Oui dans les hôtels, restaurants et grands commerces. Gardez du liquide pour les petits achats et taxis."
+        },
+        {
+            "question": "Y a-t-il du WiFi partout ?",
+            "reponse": "WiFi disponible dans les hôtels, cafés et restaurants. Vous pouvez acheter une carte SIM locale (Maroc Telecom, Orange, Inwi)."
+        }
+    ],
+    "informationsUtiles": {
+        "decalageHoraire": "GMT+1 (pas de changement d'heure)",
+        "voltage": "220V, prises européennes",
+        "joursFeries": [
+            "Vendredis (jour de prière)",
+            "Fêtes religieuses musulmanes"
+        ],
+        "pourboire": "10% dans les restaurants, 5-10 MAD pour les petits services"
+    }
+}

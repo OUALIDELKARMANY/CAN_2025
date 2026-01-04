@@ -1,0 +1,88 @@
+{
+    "stadiums": [
+        {
+            "id": 1,
+            "nom": "Stade Mohamed V",
+            "ville": "Casablanca",
+            "capacite": 45000,
+            "localisation": {
+                "lat": 33.5731,
+                "lng": -7.5898
+            },
+            "description": "Le plus grand stade du Maroc, situé au cœur de Casablanca. Rénové pour la CAN 2025, il accueillera les matchs les plus importants.",
+            "image": "https://www.h24info.ma/wp-content/uploads/2025/04/complexe-mohammed-V-Casablanca.png",
+            "anneeConstruction": 1955,
+            "derniereRenovation": 2024
+        },
+        {
+            "id": 2,
+            "nom": "Complexe Sportif Prince Moulay Abdellah",
+            "ville": "Rabat",
+            "capacite": 52000,
+            "localisation": {
+                "lat": 33.9716,
+                "lng": -6.8498
+            },
+            "description": "Stade moderne de la capitale, avec des installations de classe mondiale. Accueillera plusieurs matchs de groupes et potentiellement une demi-finale.",
+            "image": "https://f2.hespress.com/wp-content/uploads/2025/09/stade-moulay-abdellah-111.jpg",
+            "anneeConstruction": 1983,
+            "derniereRenovation": 2024
+        },
+        {
+            "id": 3,
+            "nom": "Grand Stade de Marrakech",
+            "ville": "Marrakech",
+            "capacite": 45000,
+            "localisation": {
+                "lat": 31.6295,
+                "lng": -8.0089
+            },
+            "description": "Nouveau stade ultramoderne aux portes du désert. Architecture inspirée de la culture berbère avec une ambiance unique.",
+            "image": "https://th.bing.com/th/id/OIP.YfCxaASWnm1uRcuEac28PAHaE8?w=272&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+            "anneeConstruction": 2023,
+            "derniereRenovation": 2024
+        },
+        {
+            "id": 4,
+            "nom": "Stade Adrar",
+            "ville": "Agadir",
+            "capacite": 45480,
+            "localisation": {
+                "lat": 30.4278,
+                "lng": -9.5981
+            },
+            "description": "Stade côtier avec vue sur l'océan Atlantique. Climat agréable toute l'année, parfait pour les supporters.",
+            "image": "https://lagazettedufennec.com/wp-content/uploads/2025/01/IMG_8457.jpeg",
+            "anneeConstruction": 2013,
+            "derniereRenovation": 2024
+        },
+        {
+            "id": 5,
+            "nom": "Stade de Fès",
+            "ville": "Fès",
+            "capacite": 45000,
+            "localisation": {
+                "lat": 34.0181,
+                "lng": -5.0078
+            },
+            "description": "Stade de la ville impériale, entouré par les montagnes. Atmosphère historique et passionnée.",
+            "image": "https://s.france24.com/media/display/b8b5cbfe-8d83-11f0-8add-005056a90284/w:1280/p:16x9/000-62LW8CN.jpg",
+            "anneeConstruction": 2003,
+            "derniereRenovation": 2024
+        },
+        {
+            "id": 6,
+            "nom": "Stade Ibn Batouta",
+            "ville": "Tanger",
+            "capacite": 45000,
+            "localisation": {
+                "lat": 35.7595,
+                "lng": -5.8340
+            },
+            "description": "Stade du détroit, entre deux continents. Vue spectaculaire sur la Méditerranée et l'Espagne.",
+            "image": "https://stadiumdb.com/pic-projects/grand_stade_de_tanger/grand_stade_de_tanger01.jpg",
+            "anneeConstruction": 2011,
+            "derniereRenovation": 2024
+        }
+    ]
+}
