@@ -167,7 +167,7 @@ export const commonStyles = {
   buttonText: {
     color: colors.neutral.white,
     fontSize: typography.fontSize.base,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
   
   input: {
@@ -197,7 +197,7 @@ export const commonStyles = {
   
   heading3: {
     fontSize: typography.fontSize['2xl'],
-    fontWeight: '600',
+    fontWeight: 'bold',
     color: colors.neutral.gray900,
     marginBottom: spacing.sm,
   },

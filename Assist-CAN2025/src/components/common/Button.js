@@ -27,18 +27,18 @@ const Button = ({
         styles.button,
         styles[`button_${variant}`],
         styles[`button_${size}`],
-        disabled && styles.button_disabled,
+        disabled ? styles.button_disabled : null,
         style,
-    ];
+    ].filter(Boolean);
 
     // Styles du texte en fonction du variant/size + états (disabled).
     const textStyles = [
         styles.text,
         styles[`text_${variant}`],
         styles[`text_${size}`],
-        disabled && styles.text_disabled,
+        disabled ? styles.text_disabled : null,
         textStyle,
-    ];
+    ].filter(Boolean);
 
     return (
         <TouchableOpacity
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
 
     // Text styles
     text: {
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
     },
     text_primary: {

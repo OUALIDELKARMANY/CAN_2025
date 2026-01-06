@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     attractionType: {
         fontSize: typography.fontSize.sm,
         color: colors.primary.green,
-        fontWeight: '600',
+        fontWeight: 'bold',
         marginBottom: spacing.sm,
     },
     attractionDescription: {

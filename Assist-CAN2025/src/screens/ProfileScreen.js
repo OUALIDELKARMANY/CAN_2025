@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -173,15 +173,15 @@ const ProfileScreen = () => {
                                                 key={team}
                                                 style={[
                                                     styles.teamChip,
-                                                    profile.equipe === team && styles.teamChipActive,
-                                                ]}
+                                                    profile.equipe === team ? styles.teamChipActive : null,
+                                                ].filter(Boolean)}
                                                 onPress={() => setProfile({ ...profile, equipe: team })}
                                             >
                                                 <Text
                                                     style={[
                                                         styles.teamChipText,
-                                                        profile.equipe === team && styles.teamChipTextActive,
-                                                    ]}
+                                                        profile.equipe === team ? styles.teamChipTextActive : null,
+                                                    ].filter(Boolean)}
                                                 >
                                                     {team}
                                                 </Text>
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     teamBadgeText: {
         fontSize: typography.fontSize.base,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     form: {
         width: '100%',
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: typography.fontSize.sm,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray700,
         marginBottom: spacing.xs,
     },
@@ -365,7 +365,7 @@ const styles = StyleSheet.create({
     teamChipText: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray700,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     teamChipTextActive: {
         color: colors.neutral.white,
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
     },
     matchTeams: {
         fontSize: typography.fontSize.base,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray900,
     },
     matchInfo: {
@@ -413,13 +413,13 @@ const styles = StyleSheet.create({
     favoritesLoadingText: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
     },
     favoritesErrorText: {
         fontSize: typography.fontSize.sm,
         color: colors.error,
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
     },
 });

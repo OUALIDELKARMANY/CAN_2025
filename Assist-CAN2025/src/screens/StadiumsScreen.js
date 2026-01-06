@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, ScrollView } from 'react-native';
 import Header from '../components/common/Header';
 import StadiumCard from '../components/stadiums/StadiumCard';
@@ -34,15 +34,15 @@ const StadiumsScreen = () => {
                             key={city}
                             style={[
                                 styles.filterChip,
-                                selectedCity === city && styles.filterChipActive,
-                            ]}
+                                selectedCity === city ? styles.filterChipActive : null,
+                            ].filter(Boolean)}
                             onPress={() => setSelectedCity(city)}
                         >
                             <Text
                                 style={[
                                     styles.filterChipText,
-                                    selectedCity === city && styles.filterChipTextActive,
-                                ]}
+                                    selectedCity === city ? styles.filterChipTextActive : null,
+                                ].filter(Boolean)}
                             >
                                 {city}
                             </Text>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
     filterLabel: {
         fontSize: typography.fontSize.sm,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray700,
         marginBottom: spacing.sm,
         paddingHorizontal: spacing.md,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     filterChipText: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray700,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     filterChipTextActive: {
         color: colors.neutral.white,

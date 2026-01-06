@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
     seeAll: {
         fontSize: typography.fontSize.base,
         color: colors.primary.green,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     quickActions: {
         flexDirection: 'row',
@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
     },
     actionTitle: {
         fontSize: typography.fontSize.base,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray900,
     },
     infoBanner: {
@@ -325,12 +325,12 @@ const styles = StyleSheet.create({
     loadingText: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     errorText: {
         fontSize: typography.fontSize.sm,
         color: colors.error,
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
     },
     atsCard: {
@@ -389,7 +389,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray800,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     atsTime: {
         fontSize: typography.fontSize.xs,
@@ -416,12 +416,12 @@ const styles = StyleSheet.create({
     atsHint: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     atsError: {
         fontSize: typography.fontSize.sm,
         color: colors.error,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
 });
 

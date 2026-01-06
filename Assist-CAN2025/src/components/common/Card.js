@@ -7,11 +7,12 @@ import { colors, spacing, borderRadius, shadows } from '../../styles/theme';
 // - Si elevated=true, on applique une ombre (shadows.lg).
 const Card = ({ children, onPress, style, elevated = true }) => {
     // Style final de la carte (styles de base + ombre optionnelle + style custom).
+    // On filtre les valeurs falsy pour éviter l'erreur "expected dynamic type 'boolean'"
     const cardStyle = [
         styles.card,
-        elevated && shadows.lg,
+        elevated ? shadows.lg : null,
         style,
-    ];
+    ].filter(Boolean);
 
     // Si onPress est défini, on renvoie un Pressable pour gérer l'appui.
     if (onPress) {
@@ -19,8 +20,8 @@ const Card = ({ children, onPress, style, elevated = true }) => {
             <Pressable
                 style={({ pressed }) => [
                     ...cardStyle,
-                    pressed && styles.pressed,
-                ]}
+                    pressed ? styles.pressed : null,
+                ].filter(Boolean)}
                 onPress={onPress}
             >
                 {children}

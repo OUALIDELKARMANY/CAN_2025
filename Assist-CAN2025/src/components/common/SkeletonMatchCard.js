@@ -7,7 +7,7 @@ import { colors, spacing, borderRadius } from '../../styles/theme';
 // Il simule la structure d'une MatchCard avec des blocs gris (skeleton UI).
 const SkeletonMatchCard = ({ style }) => {
     return (
-        <Card elevated={false} style={[styles.card, style]}>
+        <Card elevated={false} style={[styles.card, style].filter(Boolean)}>
             {/* En-tête: date + pastille heure */}
             <View style={styles.header}>
                 <View style={styles.pill} />

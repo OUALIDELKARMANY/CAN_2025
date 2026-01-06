@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     population: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray700,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     description: {
         fontSize: typography.fontSize.sm,
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     attractionsTitle: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
         textAlign: 'center',
     },
 });

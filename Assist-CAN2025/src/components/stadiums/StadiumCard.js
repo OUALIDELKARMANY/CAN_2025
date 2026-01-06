@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     city: {
         fontSize: typography.fontSize.base,
         color: colors.primary.green,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     capacity: {
         fontSize: typography.fontSize.sm,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     renovation: {
         fontSize: typography.fontSize.xs,
         color: colors.accent.gold,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
 });
 

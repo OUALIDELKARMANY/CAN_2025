@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     emergencyLabel: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
         marginBottom: spacing.xs,
     },
     emergencyNumber: {
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     phoneButtonText: {
         fontSize: typography.fontSize.base,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     tipRow: {
         flexDirection: 'row',
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     faqQuestion: {
         flex: 1,
         fontSize: typography.fontSize.base,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray900,
     },
     faqIcon: {
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
     infoLabel: {
         fontSize: typography.fontSize.base,
         color: colors.neutral.gray700,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     infoValue: {
         fontSize: typography.fontSize.base,

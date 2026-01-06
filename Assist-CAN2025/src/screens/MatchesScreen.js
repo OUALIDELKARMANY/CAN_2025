@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import {
     View,
     Text,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     emptyText: {
         fontSize: typography.fontSize.xl,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray700,
         marginBottom: spacing.xs,
     },
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     retryText: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
 });
 

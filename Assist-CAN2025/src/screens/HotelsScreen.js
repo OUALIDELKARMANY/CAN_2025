@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     meta: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     price: {
         fontSize: typography.fontSize.base,
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     infoValue: {
         fontSize: typography.fontSize.base,
         color: colors.neutral.gray900,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
 });
 

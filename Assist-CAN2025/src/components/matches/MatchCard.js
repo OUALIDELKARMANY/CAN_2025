@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     date: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     time: {
         fontSize: typography.fontSize.sm,
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     timeHint: {
         fontSize: typography.fontSize.xs,
         color: colors.neutral.gray500,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     favoriteButton: {
         padding: spacing.xs,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     },
     teamName: {
         fontSize: typography.fontSize.base,
-        fontWeight: '600',
+        fontWeight: 'bold',
         color: colors.neutral.gray900,
         textAlign: 'center',
     },
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     location: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray700,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     phaseContainer: {
         backgroundColor: colors.primary.green,
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     phase: {
         fontSize: typography.fontSize.xs,
         color: colors.neutral.white,
-        fontWeight: '600',
+        fontWeight: 'bold',
     },
     stadium: {
         fontSize: typography.fontSize.xs,
