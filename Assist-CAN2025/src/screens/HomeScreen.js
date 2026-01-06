@@ -19,8 +19,8 @@ import matchesData from '../data/matches.json';
 // Dimensions de l'écran (utile pour calculer des largeurs responsives).
 const { width } = Dimensions.get('window');
 
-// Logo local (assets/) pour éviter toute dépendance réseau.
-const CAN_LOGO = require('../../assets/icon.png');
+// Logo officiel CAN 2025 Maroc (CAF)
+const CAN_LOGO = require('../../assets/can2025_logo.png');
 
 // HomeScreen = page d'accueil.
 // Rôle:
@@ -83,13 +83,17 @@ const HomeScreen = ({ navigation }) => {
             {/* Hero Section */}
             <View style={styles.hero}>
                 <View style={styles.heroContent}>
-                    <Image source={CAN_LOGO} style={styles.heroLogo} resizeMode="contain" />
+                    <Image 
+                        source={CAN_LOGO} 
+                        style={styles.heroLogo} 
+                        resizeMode="contain" 
+                    />
                     <Text style={styles.heroTitle}>CAN 2025</Text>
                     <Text style={styles.heroSubtitle}>Maroc 🇲🇦</Text>
                     <Text style={styles.heroDescription}>
                         Bienvenue à la Coupe d'Afrique des Nations 2025
                     </Text>
-                    <Text style={styles.heroDate}>15 Juin - 13 Juillet 2025</Text>
+                    <Text style={styles.heroDate}>21 Décembre 2025 - 18 Janvier 2026</Text>
                 </View>
             </View>
 
@@ -195,124 +199,136 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background.primary,
     },
     hero: {
-        backgroundColor: colors.primary.green,
-        paddingVertical: spacing['3xl'],
+        backgroundColor: '#8B1538',
+        paddingTop: spacing['2xl'],
+        paddingBottom: spacing['3xl'],
         paddingHorizontal: spacing.md,
         alignItems: 'center',
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
     },
     heroContent: {
         alignItems: 'center',
     },
     heroLogo: {
-        width: 110,
-        height: 110,
-        backgroundColor: 'rgba(255,255,255,0.15)',
-        borderRadius: 16,
-        marginBottom: spacing.md,
+        width: 280,
+        height: 160,
+        marginBottom: spacing.sm,
     },
     heroTitle: {
-        fontSize: typography.fontSize['5xl'],
+        fontSize: typography.fontSize['4xl'],
         fontWeight: 'bold',
         color: colors.neutral.white,
         marginBottom: spacing.xs,
+        letterSpacing: 2,
     },
     heroSubtitle: {
-        fontSize: typography.fontSize['3xl'],
-        color: colors.accent.gold,
+        fontSize: typography.fontSize['2xl'],
+        color: '#D4AF37',
         fontWeight: 'bold',
         marginBottom: spacing.md,
     },
     heroDescription: {
-        fontSize: typography.fontSize.lg,
-        color: colors.neutral.white,
+        fontSize: typography.fontSize.base,
+        color: 'rgba(255,255,255,0.9)',
         textAlign: 'center',
         marginBottom: spacing.sm,
     },
     heroDate: {
-        fontSize: typography.fontSize.base,
-        color: colors.neutral.white,
-        opacity: 0.9,
+        fontSize: typography.fontSize.sm,
+        color: 'rgba(255,255,255,0.8)',
+        backgroundColor: 'rgba(255,255,255,0.15)',
+        paddingHorizontal: spacing.md,
+        paddingVertical: spacing.xs,
+        borderRadius: 20,
+        overflow: 'hidden',
     },
     section: {
         paddingVertical: spacing.lg,
+        paddingHorizontal: spacing.sm,
     },
     sectionHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: spacing.md,
+        paddingHorizontal: spacing.sm,
         marginBottom: spacing.md,
     },
     sectionTitle: {
-        fontSize: typography.fontSize['2xl'],
+        fontSize: typography.fontSize.xl,
         fontWeight: 'bold',
-        color: colors.neutral.gray900,
+        color: colors.neutral.gray800,
     },
     seeAll: {
-        fontSize: typography.fontSize.base,
-        color: colors.primary.green,
+        fontSize: typography.fontSize.sm,
+        color: '#8B1538',
         fontWeight: 'bold',
     },
     quickActions: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingHorizontal: spacing.md,
-        gap: spacing.md,
+        justifyContent: 'space-between',
+        paddingHorizontal: spacing.xs,
     },
     actionCard: {
-        width: (width - spacing.md * 3 - spacing.md * 2) / 2,
+        width: (width - spacing.md * 2 - spacing.sm) / 2,
         backgroundColor: colors.neutral.white,
-        borderRadius: 16,
+        borderRadius: 20,
         padding: spacing.lg,
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
+        marginBottom: spacing.sm,
+        shadowColor: '#8B1538',
+        shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.1,
-        shadowRadius: 4,
-        elevation: 3,
+        shadowRadius: 8,
+        elevation: 4,
+        borderWidth: 1,
+        borderColor: colors.neutral.gray200,
     },
     actionIcon: {
-        fontSize: 48,
+        fontSize: 40,
         marginBottom: spacing.sm,
     },
     actionTitle: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
         fontWeight: 'bold',
-        color: colors.neutral.gray900,
+        color: colors.neutral.gray800,
     },
     infoBanner: {
         flexDirection: 'row',
-        backgroundColor: colors.accent.goldLight,
+        backgroundColor: '#8B1538',
         marginHorizontal: spacing.md,
         marginBottom: spacing.lg,
         padding: spacing.md,
-        borderRadius: 12,
+        borderRadius: 16,
         alignItems: 'center',
         gap: spacing.sm,
     },
     infoBannerIcon: {
-        fontSize: 32,
+        fontSize: 28,
     },
     infoBannerContent: {
         flex: 1,
     },
     infoBannerTitle: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
         fontWeight: 'bold',
-        color: colors.neutral.gray900,
+        color: colors.neutral.white,
         marginBottom: spacing.xs,
     },
     infoBannerText: {
-        fontSize: typography.fontSize.sm,
-        color: colors.neutral.gray700,
+        fontSize: typography.fontSize.xs,
+        color: 'rgba(255,255,255,0.85)',
     },
     footer: {
-        paddingVertical: spacing.xl,
+        paddingVertical: spacing.lg,
         paddingHorizontal: spacing.md,
         alignItems: 'center',
+        backgroundColor: colors.neutral.gray100,
+        marginTop: spacing.md,
     },
     footerText: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
         textAlign: 'center',
     },

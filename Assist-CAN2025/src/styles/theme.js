@@ -5,36 +5,36 @@
 // - garantir une cohérence visuelle sur toute l'app
 
 export const colors = {
-  // Couleurs principales (inspirées du drapeau du Maroc)
+  // Couleurs principales (inspirées du logo CAN 2025 Maroc)
   primary: {
     green: '#006233',
     greenLight: '#00843D',
     greenDark: '#004D28',
-    red: '#C1272D',
-    redLight: '#E63946',
-    redDark: '#8B1E23',
+    red: '#8B1538',        // Rouge bordeaux du logo
+    redLight: '#A91D3A',
+    redDark: '#6B0F2B',
   },
   
-  // Couleurs d'accent (ex: or CAN)
+  // Couleurs d'accent (or CAN)
   accent: {
-    gold: '#FFD700',
-    goldLight: '#FFE44D',
-    goldDark: '#CCB000',
+    gold: '#D4AF37',
+    goldLight: '#E5C158',
+    goldDark: '#B8962E',
   },
   
   // Couleurs neutres (gris, noir, blanc)
   neutral: {
     white: '#FFFFFF',
     black: '#000000',
-    gray100: '#F5F5F5',
-    gray200: '#E5E5E5',
-    gray300: '#D4D4D4',
-    gray400: '#A3A3A3',
-    gray500: '#737373',
-    gray600: '#525252',
-    gray700: '#404040',
-    gray800: '#262626',
-    gray900: '#171717',
+    gray100: '#F8F9FA',
+    gray200: '#E9ECEF',
+    gray300: '#DEE2E6',
+    gray400: '#ADB5BD',
+    gray500: '#6C757D',
+    gray600: '#495057',
+    gray700: '#343A40',
+    gray800: '#212529',
+    gray900: '#121416',
   },
   
   // Couleurs sémantiques (utilisées pour états: succès/erreur/etc.)
@@ -46,8 +46,9 @@ export const colors = {
   // Couleurs de fond
   background: {
     primary: '#FFFFFF',
-    secondary: '#F5F5F5',
-    dark: '#1A1A1A',
+    secondary: '#F8F9FA',
+    dark: '#121416',
+    gradient: '#8B1538',   // Pour le hero
   },
 };
 

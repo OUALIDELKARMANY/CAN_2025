@@ -26,19 +26,24 @@ const AppNavigator = () => {
                 // screenOptions applique des options par défaut à tous les onglets.
                 screenOptions={{
                     headerShown: false,
-                    tabBarActiveTintColor: colors.primary.green,
-                    tabBarInactiveTintColor: colors.neutral.gray500,
+                    tabBarActiveTintColor: '#8B1538',
+                    tabBarInactiveTintColor: colors.neutral.gray400,
                     tabBarStyle: {
                         backgroundColor: colors.neutral.white,
-                        borderTopWidth: 1,
-                        borderTopColor: colors.neutral.gray200,
-                        paddingBottom: 5,
-                        paddingTop: 5,
-                        height: 60,
+                        borderTopWidth: 0,
+                        paddingBottom: 8,
+                        paddingTop: 8,
+                        height: 65,
+                        shadowColor: '#000',
+                        shadowOffset: { width: 0, height: -4 },
+                        shadowOpacity: 0.1,
+                        shadowRadius: 8,
+                        elevation: 10,
                     },
                     tabBarLabelStyle: {
-                        fontSize: 12,
+                        fontSize: 11,
                         fontWeight: 'bold',
+                        marginTop: 2,
                     },
                 }}
             >

@@ -103,6 +103,9 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
 const styles = StyleSheet.create({
     card: {
         marginHorizontal: spacing.md,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.neutral.gray200,
     },
     header: {
         flexDirection: 'row',
@@ -116,19 +119,17 @@ const styles = StyleSheet.create({
         gap: spacing.sm,
     },
     date: {
-        fontSize: typography.fontSize.sm,
+        fontSize: typography.fontSize.xs,
         color: colors.neutral.gray600,
         fontWeight: 'bold',
     },
     time: {
         fontSize: typography.fontSize.sm,
-        color: colors.primary.green,
+        color: '#8B1538',
         fontWeight: 'bold',
     },
     timePill: {
-        backgroundColor: colors.neutral.gray100,
-        borderWidth: 1,
-        borderColor: colors.neutral.gray200,
+        backgroundColor: 'rgba(139, 21, 56, 0.1)',
         paddingHorizontal: spacing.sm,
         paddingVertical: spacing.xs,
         borderRadius: 999,
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
     },
     timeHint: {
         fontSize: typography.fontSize.xs,
-        color: colors.neutral.gray500,
+        color: '#8B1538',
         fontWeight: 'bold',
     },
     favoriteButton: {
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
     },
     favoriteIcon: {
         fontSize: typography.fontSize['2xl'],
-        color: colors.accent.gold,
+        color: '#D4AF37',
     },
     matchInfo: {
         flexDirection: 'row',
@@ -191,18 +192,18 @@ const styles = StyleSheet.create({
         gap: spacing.xs,
     },
     locationIcon: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
     },
     location: {
-        fontSize: typography.fontSize.sm,
-        color: colors.neutral.gray700,
+        fontSize: typography.fontSize.xs,
+        color: colors.neutral.gray600,
         fontWeight: 'bold',
     },
     phaseContainer: {
-        backgroundColor: colors.primary.green,
+        backgroundColor: '#8B1538',
         paddingHorizontal: spacing.sm,
         paddingVertical: spacing.xs,
-        borderRadius: 12,
+        borderRadius: 20,
     },
     phase: {
         fontSize: typography.fontSize.xs,
@@ -213,6 +214,7 @@ const styles = StyleSheet.create({
         fontSize: typography.fontSize.xs,
         color: colors.neutral.gray500,
         fontStyle: 'italic',
+        marginTop: spacing.xs,
     },
 });
 

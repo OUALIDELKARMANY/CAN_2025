@@ -120,36 +120,45 @@ const MatchesScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.background.primary,
+        backgroundColor: '#F8F9FA',
     },
     listContent: {
         paddingVertical: spacing.md,
+        paddingHorizontal: spacing.xs,
     },
     emptyContainer: {
         alignItems: 'center',
         paddingVertical: spacing['3xl'],
+        paddingHorizontal: spacing.lg,
     },
     emptyIcon: {
-        fontSize: 64,
-        marginBottom: spacing.md,
+        fontSize: 80,
+        marginBottom: spacing.lg,
     },
     emptyText: {
         fontSize: typography.fontSize.xl,
         fontWeight: 'bold',
         color: colors.neutral.gray700,
-        marginBottom: spacing.xs,
-    },
-    emptySubtext: {
-        fontSize: typography.fontSize.base,
-        color: colors.neutral.gray500,
+        marginBottom: spacing.sm,
         textAlign: 'center',
     },
+    emptySubtext: {
+        fontSize: typography.fontSize.sm,
+        color: colors.neutral.gray500,
+        textAlign: 'center',
+        lineHeight: 20,
+    },
     retryButton: {
-        marginTop: spacing.md,
-        backgroundColor: colors.primary.green,
-        paddingVertical: spacing.sm,
-        paddingHorizontal: spacing.lg,
-        borderRadius: borderRadius.full,
+        marginTop: spacing.lg,
+        backgroundColor: '#8B1538',
+        paddingVertical: spacing.md,
+        paddingHorizontal: spacing.xl,
+        borderRadius: 25,
+        shadowColor: '#8B1538',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 5,
     },
     retryText: {
         fontSize: typography.fontSize.sm,

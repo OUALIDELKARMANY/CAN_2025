@@ -86,12 +86,12 @@ const styles = StyleSheet.create({
     imagePlaceholder: {
         width: '100%',
         height: '100%',
-        backgroundColor: colors.neutral.gray200,
+        backgroundColor: '#F0F0F0',
         justifyContent: 'center',
         alignItems: 'center',
     },
     stadiumIcon: {
-        fontSize: 48,
+        fontSize: 56,
     },
     content: {
         paddingHorizontal: spacing.md,
@@ -99,9 +99,9 @@ const styles = StyleSheet.create({
         gap: spacing.sm,
     },
     name: {
-        fontSize: typography.fontSize.xl,
+        fontSize: typography.fontSize.lg,
         fontWeight: 'bold',
-        color: colors.neutral.gray900,
+        color: colors.neutral.gray800,
     },
     infoRow: {
         flexDirection: 'row',
@@ -109,29 +109,29 @@ const styles = StyleSheet.create({
         gap: spacing.xs,
     },
     icon: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
     },
     city: {
-        fontSize: typography.fontSize.base,
-        color: colors.primary.green,
+        fontSize: typography.fontSize.sm,
+        color: '#8B1538',
         fontWeight: 'bold',
     },
     capacity: {
-        fontSize: typography.fontSize.sm,
-        color: colors.neutral.gray700,
+        fontSize: typography.fontSize.xs,
+        color: colors.neutral.gray600,
     },
     description: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        lineHeight: typography.fontSize.sm * 1.5,
+        lineHeight: 20,
     },
     footer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: spacing.xs,
+        marginTop: spacing.sm,
         paddingTop: spacing.sm,
         borderTopWidth: 1,
-        borderTopColor: colors.neutral.gray200,
+        borderTopColor: colors.neutral.gray100,
     },
     year: {
         fontSize: typography.fontSize.xs,
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     },
     renovation: {
         fontSize: typography.fontSize.xs,
-        color: colors.accent.gold,
+        color: '#D4AF37',
         fontWeight: 'bold',
     },
 });

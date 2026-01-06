@@ -75,17 +75,21 @@ const StadiumsScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.background.primary,
+        backgroundColor: '#F8F9FA',
     },
     filterSection: {
         paddingVertical: spacing.md,
+        backgroundColor: colors.neutral.white,
+        marginBottom: spacing.sm,
     },
     filterLabel: {
-        fontSize: typography.fontSize.sm,
+        fontSize: typography.fontSize.xs,
         fontWeight: 'bold',
-        color: colors.neutral.gray700,
+        color: colors.neutral.gray500,
         marginBottom: spacing.sm,
         paddingHorizontal: spacing.md,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
     },
     filterChips: {
         flexDirection: 'row',
@@ -94,26 +98,27 @@ const styles = StyleSheet.create({
     },
     filterChip: {
         paddingVertical: spacing.sm,
-        paddingHorizontal: spacing.md,
-        borderRadius: borderRadius.full,
-        backgroundColor: colors.neutral.gray100,
-        borderWidth: 1,
+        paddingHorizontal: spacing.lg,
+        borderRadius: 25,
+        backgroundColor: colors.neutral.white,
+        borderWidth: 1.5,
         borderColor: colors.neutral.gray200,
     },
     filterChipActive: {
-        backgroundColor: colors.primary.green,
-        borderColor: colors.primary.green,
+        backgroundColor: '#8B1538',
+        borderColor: '#8B1538',
     },
     filterChipText: {
         fontSize: typography.fontSize.sm,
-        color: colors.neutral.gray700,
+        color: colors.neutral.gray600,
         fontWeight: 'bold',
     },
     filterChipTextActive: {
         color: colors.neutral.white,
     },
     listContent: {
-        paddingVertical: spacing.md,
+        paddingVertical: spacing.sm,
+        paddingHorizontal: spacing.xs,
     },
 });
 

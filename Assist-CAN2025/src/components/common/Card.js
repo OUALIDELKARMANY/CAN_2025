@@ -36,13 +36,15 @@ const Card = ({ children, onPress, style, elevated = true }) => {
 const styles = StyleSheet.create({
     card: {
         backgroundColor: colors.neutral.white,
-        borderRadius: borderRadius.lg,
+        borderRadius: 16,
         padding: spacing.md,
         marginBottom: spacing.md,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.05)',
     },
     pressed: {
-        opacity: 0.92,
-        transform: [{ scale: 0.99 }],
+        opacity: 0.95,
+        transform: [{ scale: 0.98 }],
     },
 });
 

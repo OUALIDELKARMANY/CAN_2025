@@ -36,10 +36,12 @@ const Header = ({ title, subtitle, onBackPress, rightComponent }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.primary.green,
-        paddingTop: spacing.xl,
-        paddingBottom: spacing.md,
+        backgroundColor: '#8B1538',
+        paddingTop: spacing['2xl'],
+        paddingBottom: spacing.lg,
         paddingHorizontal: spacing.md,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
     },
     content: {
         flexDirection: 'row',
@@ -49,9 +51,11 @@ const styles = StyleSheet.create({
     backButton: {
         padding: spacing.sm,
         marginRight: spacing.sm,
+        backgroundColor: 'rgba(255,255,255,0.15)',
+        borderRadius: 12,
     },
     backIcon: {
-        fontSize: typography.fontSize['2xl'],
+        fontSize: typography.fontSize.xl,
         color: colors.neutral.white,
         fontWeight: 'bold',
     },
@@ -59,14 +63,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     title: {
-        fontSize: typography.fontSize['2xl'],
+        fontSize: typography.fontSize.xl,
         fontWeight: 'bold',
         color: colors.neutral.white,
+        letterSpacing: 0.5,
     },
     subtitle: {
-        fontSize: typography.fontSize.sm,
-        color: colors.neutral.white,
-        opacity: 0.9,
+        fontSize: typography.fontSize.xs,
+        color: 'rgba(255,255,255,0.8)',
         marginTop: spacing.xs,
     },
     rightComponent: {

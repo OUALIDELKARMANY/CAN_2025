@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     imagePlaceholder: {
         width: '100%',
         height: '100%',
-        backgroundColor: colors.neutral.gray200,
+        backgroundColor: '#F0F0F0',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -86,9 +86,9 @@ const styles = StyleSheet.create({
         gap: spacing.sm,
     },
     name: {
-        fontSize: typography.fontSize['2xl'],
+        fontSize: typography.fontSize.xl,
         fontWeight: 'bold',
-        color: colors.neutral.gray900,
+        color: colors.neutral.gray800,
     },
     infoRow: {
         flexDirection: 'row',
@@ -96,27 +96,27 @@ const styles = StyleSheet.create({
         gap: spacing.xs,
     },
     icon: {
-        fontSize: typography.fontSize.base,
+        fontSize: typography.fontSize.sm,
     },
     population: {
-        fontSize: typography.fontSize.sm,
-        color: colors.neutral.gray700,
+        fontSize: typography.fontSize.xs,
+        color: colors.neutral.gray600,
         fontWeight: 'bold',
     },
     description: {
         fontSize: typography.fontSize.sm,
         color: colors.neutral.gray600,
-        lineHeight: typography.fontSize.sm * 1.5,
+        lineHeight: 20,
     },
     attractionsContainer: {
-        backgroundColor: colors.primary.green,
+        backgroundColor: '#8B1538',
         paddingVertical: spacing.sm,
         paddingHorizontal: spacing.md,
-        borderRadius: 8,
-        marginTop: spacing.xs,
+        borderRadius: 20,
+        marginTop: spacing.sm,
     },
     attractionsTitle: {
-        fontSize: typography.fontSize.sm,
+        fontSize: typography.fontSize.xs,
         color: colors.neutral.white,
         fontWeight: 'bold',
         textAlign: 'center',
