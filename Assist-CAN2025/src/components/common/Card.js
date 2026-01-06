@@ -2,13 +2,18 @@ import React from 'react';
 import { View, StyleSheet, Pressable } from 'react-native';
 import { colors, spacing, borderRadius, shadows } from '../../styles/theme';
 
+// Card = conteneur UI réutilisable.
+// - Si onPress est fourni, la carte devient cliquable (Pressable).
+// - Si elevated=true, on applique une ombre (shadows.lg).
 const Card = ({ children, onPress, style, elevated = true }) => {
+    // Style final de la carte (styles de base + ombre optionnelle + style custom).
     const cardStyle = [
         styles.card,
         elevated && shadows.lg,
         style,
     ];
 
+    // Si onPress est défini, on renvoie un Pressable pour gérer l'appui.
     if (onPress) {
         return (
             <Pressable
@@ -23,6 +28,7 @@ const Card = ({ children, onPress, style, elevated = true }) => {
         );
     }
 
+    // Sinon, on renvoie une View simple (non interactive).
     return <View style={cardStyle}>{children}</View>;
 };
 

@@ -5,16 +5,25 @@ import StadiumCard from '../components/stadiums/StadiumCard';
 import { colors, spacing, typography, borderRadius } from '../styles/theme';
 import stadiumsData from '../data/stadiums.json';
 
+// StadiumsScreen = page "Stades".
+// Rôle:
+// - afficher les stades (données locales)
+// - proposer un filtre simple par ville
 const StadiumsScreen = () => {
+    // stadiums: liste complète chargée depuis le JSON.
     const [stadiums] = useState(stadiumsData.stadiums);
+    // selectedCity: ville choisie dans le filtre.
     const [selectedCity, setSelectedCity] = useState('Toutes');
 
+    // Liste des villes (unique) utilisée pour construire le filtre.
     const cities = ['Toutes', ...new Set(stadiums.map(s => s.ville))];
 
+    // Application du filtre ville.
     const filteredStadiums = selectedCity === 'Toutes'
         ? stadiums
         : stadiums.filter(s => s.ville === selectedCity);
 
+    // UI du filtre (chips horizontales).
     const renderCityFilter = () => (
         <View style={styles.filterSection}>
             <Text style={styles.filterLabel}>Filtrer par ville</Text>

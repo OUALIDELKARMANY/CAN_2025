@@ -7,7 +7,6 @@ import {
     TouchableOpacity,
     Dimensions,
     Image,
-    Linking,
 } from 'react-native';
 import { colors, spacing, typography } from '../styles/theme';
 import Button from '../components/common/Button';
@@ -15,53 +14,50 @@ import MatchCard from '../components/matches/MatchCard';
 import SkeletonMatchCard from '../components/common/SkeletonMatchCard';
 import Card from '../components/common/Card';
 import { getFavoriteMatches, saveFavoriteMatch, removeFavoriteMatch } from '../utils/storage';
-import { getAfconFixtures } from '../services/apiSports';
-import {
-    AFRICA_TOP_SPORTS_URLS,
-    AFRICA_TOP_SPORTS_PROGRAM_CITIES,
-    getProgramByCity,
-} from '../services/africaTopSports';
+import matchesData from '../data/matches.json';
 
+// Dimensions de l'écran (utile pour calculer des largeurs responsives).
 const { width } = Dimensions.get('window');
 
-const CAN_LOGO_URL = 'https://critikmag.com/wp-content/uploads/2025/01/logo-officiel-de-la-can-2025-critikmag.jpg';
+// Logo local (assets/) pour éviter toute dépendance réseau.
+const CAN_LOGO = require('../../assets/icon.png');
 
+// HomeScreen = page d'accueil.
+// Rôle:
+// - afficher un "hero" CAN 2025
+// - afficher des raccourcis vers les autres pages
+// - afficher une liste des prochains matchs (données locales)
+// - gérer les favoris (stockage local via AsyncStorage)
 const HomeScreen = ({ navigation }) => {
+    // upcomingMatches: les prochains matchs à afficher sur l'accueil.
     const [upcomingMatches, setUpcomingMatches] = useState([]);
+    // favorites: liste des IDs de matchs marqués en favoris.
     const [favorites, setFavorites] = useState([]);
+    // loading/error: états d'UI pendant le chargement des données.
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [selectedProgramCity, setSelectedProgramCity] = useState(
-        AFRICA_TOP_SPORTS_PROGRAM_CITIES[0]?.key || 'tanger'
-    );
-    const [programItems, setProgramItems] = useState([]);
-    const [programError, setProgramError] = useState(null);
-    const [programLoading, setProgramLoading] = useState(false);
 
+    // Au montage de l'écran, on charge données + favoris.
     useEffect(() => {
         loadData();
     }, []);
 
+    // Charge les matchs depuis src/data/matches.json, puis lit les favoris depuis le storage.
     const loadData = async () => {
         try {
             setLoading(true);
             setError(null);
-            setProgramError(null);
 
-            const upcoming = await getAfconFixtures({ season: 2025, status: 'NS' });
+            // Sécurise la lecture du JSON (au cas où le format est incorrect).
+            const allMatches = Array.isArray(matchesData?.matches) ? matchesData.matches : [];
+
+            // Tri chronologique pour obtenir les matchs les plus proches.
+            const upcoming = [...allMatches].sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            // On affiche seulement les 3 premiers sur l'accueil.
             setUpcomingMatches(upcoming.slice(0, 3));
 
-            setProgramLoading(true);
-            try {
-                const program = await getProgramByCity(selectedProgramCity);
-                setProgramItems(Array.isArray(program) ? program.slice(0, 5) : []);
-            } catch (e) {
-                setProgramItems([]);
-                setProgramError(e?.message || 'Impossible de charger les infos Africa Top Sports');
-            } finally {
-                setProgramLoading(false);
-            }
-
+            // Favoris = IDs stockés localement.
             const favs = await getFavoriteMatches();
             setFavorites(favs);
         } catch (e) {
@@ -71,22 +67,7 @@ const HomeScreen = ({ navigation }) => {
         }
     };
 
-    const handleSelectProgramCity = async (cityKey) => {
-        setSelectedProgramCity(cityKey);
-        setProgramLoading(true);
-        setProgramError(null);
-
-        try {
-            const program = await getProgramByCity(cityKey);
-            setProgramItems(Array.isArray(program) ? program.slice(0, 5) : []);
-        } catch (e) {
-            setProgramItems([]);
-            setProgramError(e?.message || 'Impossible de charger les infos Africa Top Sports');
-        } finally {
-            setProgramLoading(false);
-        }
-    };
-
+    // Ajoute/enlève un match des favoris.
     const handleToggleFavorite = async (matchId) => {
         if (favorites.includes(matchId)) {
             await removeFavoriteMatch(matchId);
@@ -102,7 +83,7 @@ const HomeScreen = ({ navigation }) => {
             {/* Hero Section */}
             <View style={styles.hero}>
                 <View style={styles.heroContent}>
-                    <Image source={{ uri: CAN_LOGO_URL }} style={styles.heroLogo} resizeMode="contain" />
+                    <Image source={CAN_LOGO} style={styles.heroLogo} resizeMode="contain" />
                     <Text style={styles.heroTitle}>CAN 2025</Text>
                     <Text style={styles.heroSubtitle}>Maroc 🇲🇦</Text>
                     <Text style={styles.heroDescription}>
@@ -197,72 +178,6 @@ const HomeScreen = ({ navigation }) => {
                     variant="accent"
                     onPress={() => navigation.navigate('Assistance')}
                 />
-            </View>
-
-            <View style={styles.section}>
-                <View style={styles.sectionHeader}>
-                    <Text style={styles.sectionTitle}>Infos (Africa Top Sports)</Text>
-                    <TouchableOpacity onPress={() => Linking.openURL(AFRICA_TOP_SPORTS_URLS.CAN_GUIDE)}>
-                        <Text style={styles.seeAll}>Guide →</Text>
-                    </TouchableOpacity>
-                </View>
-
-                <Card style={styles.atsCard}>
-                    <Text style={styles.atsTitle}>Programme par ville</Text>
-
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.atsCitiesScroll}>
-                        <View style={styles.atsCitiesRow}>
-                            {AFRICA_TOP_SPORTS_PROGRAM_CITIES.map((c) => {
-                                const active = c.key === selectedProgramCity;
-                                return (
-                                    <TouchableOpacity
-                                        key={c.key}
-                                        style={[styles.atsCityChip, active && styles.atsCityChipActive]}
-                                        onPress={() => handleSelectProgramCity(c.key)}
-                                    >
-                                        <Text
-                                            style={[styles.atsCityChipText, active && styles.atsCityChipTextActive]}
-                                        >
-                                            {c.label}
-                                        </Text>
-                                    </TouchableOpacity>
-                                );
-                            })}
-                        </View>
-                    </ScrollView>
-
-                    {programError ? (
-                        <Text style={styles.atsError}>{programError}</Text>
-                    ) : programLoading ? (
-                        <Text style={styles.atsHint}>Chargement…</Text>
-                    ) : programItems.length ? (
-                        <View style={styles.atsList}>
-                            {programItems.map((item, idx) => (
-                                <View key={`${item.dateLabel}-${idx}`} style={styles.atsRow}>
-                                    <Text style={styles.atsDate}>{item.dateLabel}</Text>
-                                    <Text style={styles.atsMatch} numberOfLines={1}>
-                                        {item.matchLabel}
-                                    </Text>
-                                    <Text style={styles.atsTime}>{item.timeLabel}</Text>
-                                </View>
-                            ))}
-                        </View>
-                    ) : (
-                        <Text style={styles.atsHint}>Aucun match trouvé</Text>
-                    )}
-
-                    <TouchableOpacity
-                        onPress={() => {
-                            const selected = AFRICA_TOP_SPORTS_PROGRAM_CITIES.find(
-                                (c) => c.key === selectedProgramCity
-                            );
-                            if (selected?.url) Linking.openURL(selected.url);
-                        }}
-                        style={styles.atsSource}
-                    >
-                        <Text style={styles.atsSourceText}>Source</Text>
-                    </TouchableOpacity>
-                </Card>
             </View>
 
             <View style={styles.footer}>

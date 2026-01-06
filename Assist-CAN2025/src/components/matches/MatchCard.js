@@ -3,10 +3,18 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import Card from '../common/Card';
 import { colors, spacing, typography } from '../../styles/theme';
 
+// MatchCard = composant UI pour afficher un match.
+// Props:
+// - match: objet match (équipe1/équipe2/date/ville/stade/phase/score...)
+// - onPress: callback quand on appuie sur la carte
+// - isFavorite: boolean pour l'état du favori
+// - onToggleFavorite: callback pour ajouter/retirer le match des favoris
 const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
+    // Convertit match.date en Date JS (si possible), pour pouvoir formater.
     const matchDate = match?.date ? new Date(match.date) : null;
     const hasValidDate = matchDate instanceof Date && !Number.isNaN(matchDate.getTime());
 
+    // Date en format court (ex: "ven. 5 juil.").
     const formattedDate = hasValidDate
         ? matchDate.toLocaleDateString('fr-FR', {
             weekday: 'short',
@@ -15,6 +23,7 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
         })
         : '';
 
+    // Heure en format "HHhMM" (ex: "18h00").
     const formattedTime = hasValidDate
         ? (() => {
             const hh = String(matchDate.getHours()).padStart(2, '0');
@@ -36,6 +45,7 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
                     ) : null}
                 </View>
 
+                {/* Bouton favori: on stoppe la propagation pour ne pas déclencher onPress de la carte */}
                 <TouchableOpacity
                     onPress={(e) => {
                         e.stopPropagation();
@@ -49,6 +59,7 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
 
             <View style={styles.matchInfo}>
                 <View style={styles.team}>
+                    {/* Si on a un logo (URL), on l'affiche, sinon on affiche un drapeau emoji */}
                     {match.logo1 ? (
                         <Image source={{ uri: match.logo1 }} style={styles.logo} resizeMode="contain" />
                     ) : (
@@ -58,10 +69,12 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
                 </View>
 
                 <View style={styles.versus}>
+                    {/* Score si disponible, sinon "VS" */}
                     <Text style={styles.vsText}>{match.score || 'VS'}</Text>
                 </View>
 
                 <View style={styles.team}>
+                    {/* Même logique logo/drapeau pour l'équipe 2 */}
                     {match.logo2 ? (
                         <Image source={{ uri: match.logo2 }} style={styles.logo} resizeMode="contain" />
                     ) : (
@@ -81,6 +94,7 @@ const MatchCard = ({ match, onPress, isFavorite, onToggleFavorite }) => {
                 </View>
             </View>
 
+            {/* Nom du stade */}
             <Text style={styles.stadium}>{match.stade}</Text>
         </Card>
     );

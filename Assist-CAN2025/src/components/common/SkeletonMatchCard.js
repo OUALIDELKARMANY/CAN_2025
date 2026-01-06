@@ -3,14 +3,18 @@ import { View, StyleSheet } from 'react-native';
 import Card from './Card';
 import { colors, spacing, borderRadius } from '../../styles/theme';
 
+// SkeletonMatchCard = placeholder de chargement.
+// Il simule la structure d'une MatchCard avec des blocs gris (skeleton UI).
 const SkeletonMatchCard = ({ style }) => {
     return (
         <Card elevated={false} style={[styles.card, style]}>
+            {/* En-tête: date + pastille heure */}
             <View style={styles.header}>
                 <View style={styles.pill} />
                 <View style={styles.pillSmall} />
             </View>
 
+            {/* Bloc équipes: logo + nom, VS au centre */}
             <View style={styles.teamsRow}>
                 <View style={styles.team}>
                     <View style={styles.logo} />
@@ -25,11 +29,13 @@ const SkeletonMatchCard = ({ style }) => {
                 </View>
             </View>
 
+            {/* Footer: ville + phase */}
             <View style={styles.footer}>
                 <View style={styles.pill} />
                 <View style={styles.phasePill} />
             </View>
 
+            {/* Ligne stade */}
             <View style={styles.lineShort} />
         </Card>
     );

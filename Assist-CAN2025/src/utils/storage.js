@@ -1,13 +1,18 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Keys for AsyncStorage
+// Utils de persistance locale (AsyncStorage).
+// Rôle: centraliser la lecture/écriture des données locales de l'app.
+
+// Clés utilisées dans AsyncStorage (noms stables pour stocker/récupérer les données).
 const STORAGE_KEYS = {
     FAVORITES: '@assist_can_favorites',
     PROFILE: '@assist_can_profile',
     PREFERENCES: '@assist_can_preferences',
 };
 
-// Favorites management
+// Gestion des favoris (liste d'IDs de matchs).
+
+// Ajoute un match aux favoris (si pas déjà présent).
 export const saveFavoriteMatch = async (matchId) => {
     try {
         const favorites = await getFavoriteMatches();
@@ -22,6 +27,7 @@ export const saveFavoriteMatch = async (matchId) => {
     }
 };
 
+// Retire un match des favoris.
 export const removeFavoriteMatch = async (matchId) => {
     try {
         const favorites = await getFavoriteMatches();
@@ -34,6 +40,7 @@ export const removeFavoriteMatch = async (matchId) => {
     }
 };
 
+// Récupère la liste des IDs favoris (tableau).
 export const getFavoriteMatches = async () => {
     try {
         const favorites = await AsyncStorage.getItem(STORAGE_KEYS.FAVORITES);
@@ -44,6 +51,7 @@ export const getFavoriteMatches = async () => {
     }
 };
 
+// Vérifie si un ID de match est en favori.
 export const isFavoriteMatch = async (matchId) => {
     try {
         const favorites = await getFavoriteMatches();
@@ -54,7 +62,9 @@ export const isFavoriteMatch = async (matchId) => {
     }
 };
 
-// Profile management
+// Gestion du profil utilisateur.
+
+// Sauvegarde l'objet profil (nom/prénom/etc.).
 export const saveProfile = async (profileData) => {
     try {
         await AsyncStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(profileData));
@@ -65,6 +75,7 @@ export const saveProfile = async (profileData) => {
     }
 };
 
+// Récupère le profil (ou null si absent).
 export const getProfile = async () => {
     try {
         const profile = await AsyncStorage.getItem(STORAGE_KEYS.PROFILE);
@@ -75,7 +86,9 @@ export const getProfile = async () => {
     }
 };
 
-// Preferences management
+// Gestion des préférences (ex: langue, notifications...).
+
+// Sauvegarde un objet de préférences.
 export const savePreferences = async (preferences) => {
     try {
         await AsyncStorage.setItem(STORAGE_KEYS.PREFERENCES, JSON.stringify(preferences));
@@ -86,6 +99,7 @@ export const savePreferences = async (preferences) => {
     }
 };
 
+// Récupère les préférences, ou des valeurs par défaut.
 export const getPreferences = async () => {
     try {
         const preferences = await AsyncStorage.getItem(STORAGE_KEYS.PREFERENCES);
@@ -96,7 +110,7 @@ export const getPreferences = async () => {
     }
 };
 
-// Clear all data
+// Réinitialisation: supprime toutes les données locales liées à l'app.
 export const clearAllData = async () => {
     try {
         await AsyncStorage.multiRemove([

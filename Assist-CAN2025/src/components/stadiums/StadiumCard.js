@@ -3,9 +3,15 @@ import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import Card from '../common/Card';
 import { colors, spacing, typography } from '../../styles/theme';
 
+// Dimensions écran (utile pour calculer des largeurs si besoin).
 const { width } = Dimensions.get('window');
 
+// StadiumCard = carte UI pour afficher un stade.
+// Props:
+// - stadium: objet stade (nom, ville, capacité, description, image, etc.)
+// - onPress: callback optionnel si on veut rendre la carte cliquable
 const StadiumCard = ({ stadium, onPress }) => {
+    // Détecte si l'image est une URL (http...) ou une data URI.
     const hasImageUrl =
         typeof stadium?.image === 'string' &&
         (stadium.image.startsWith('http') || stadium.image.startsWith('data:image'));
@@ -13,6 +19,7 @@ const StadiumCard = ({ stadium, onPress }) => {
     return (
         <Card onPress={onPress} style={styles.card}>
             <View style={styles.imageContainer}>
+                {/* Si on a une URL valide, on affiche l'image, sinon un placeholder */}
                 {hasImageUrl ? (
                     <Image
                         source={{ uri: stadium.image }}
@@ -37,6 +44,7 @@ const StadiumCard = ({ stadium, onPress }) => {
                 <View style={styles.infoRow}>
                     <Text style={styles.icon}>👥</Text>
                     <Text style={styles.capacity}>
+                        {/* toLocaleString() sert à afficher les milliers (ex: 60 000) */}
                         Capacité: {stadium.capacite.toLocaleString()} places
                     </Text>
                 </View>

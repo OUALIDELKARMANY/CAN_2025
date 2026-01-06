@@ -1,8 +1,11 @@
-// Theme configuration for Assist CAN 2025
-// Colors inspired by Morocco and CAN 2025
+// Theme global de l'application.
+// Rôle:
+// - centraliser les couleurs, espacements, typographies, ombres...
+// - éviter la duplication de styles dans les écrans
+// - garantir une cohérence visuelle sur toute l'app
 
 export const colors = {
-  // Primary colors - Morocco flag
+  // Couleurs principales (inspirées du drapeau du Maroc)
   primary: {
     green: '#006233',
     greenLight: '#00843D',
@@ -12,14 +15,14 @@ export const colors = {
     redDark: '#8B1E23',
   },
   
-  // CAN 2025 accent
+  // Couleurs d'accent (ex: or CAN)
   accent: {
     gold: '#FFD700',
     goldLight: '#FFE44D',
     goldDark: '#CCB000',
   },
   
-  // Neutrals
+  // Couleurs neutres (gris, noir, blanc)
   neutral: {
     white: '#FFFFFF',
     black: '#000000',
@@ -34,13 +37,13 @@ export const colors = {
     gray900: '#171717',
   },
   
-  // Semantic colors
+  // Couleurs sémantiques (utilisées pour états: succès/erreur/etc.)
   success: '#10B981',
   warning: '#F59E0B',
   error: '#EF4444',
   info: '#3B82F6',
   
-  // Background
+  // Couleurs de fond
   background: {
     primary: '#FFFFFF',
     secondary: '#F5F5F5',
@@ -49,6 +52,7 @@ export const colors = {
 };
 
 export const typography = {
+  // Familles de police (par défaut: System)
   fontFamily: {
     regular: 'System',
     medium: 'System',
@@ -56,6 +60,7 @@ export const typography = {
     semiBold: 'System',
   },
   
+  // Tailles de texte standard
   fontSize: {
     xs: 12,
     sm: 14,
@@ -68,6 +73,7 @@ export const typography = {
     '5xl': 48,
   },
   
+  // Multiplicateurs pour calculer des line-heights
   lineHeight: {
     tight: 1.2,
     normal: 1.5,
@@ -76,6 +82,7 @@ export const typography = {
 };
 
 export const spacing = {
+  // Espacements standard (padding/margin)
   xs: 4,
   sm: 8,
   md: 16,
@@ -86,6 +93,7 @@ export const spacing = {
 };
 
 export const borderRadius = {
+  // Rayons d'arrondi standard
   sm: 4,
   md: 8,
   lg: 12,
@@ -95,6 +103,7 @@ export const borderRadius = {
 };
 
 export const shadows = {
+  // Ombres standard (iOS: shadow*, Android: elevation)
   sm: {
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
@@ -125,7 +134,7 @@ export const shadows = {
   },
 };
 
-// Common component styles
+// Styles "communs" prêts à l'emploi (si tu veux factoriser des patterns UI)
 export const commonStyles = {
   container: {
     flex: 1,

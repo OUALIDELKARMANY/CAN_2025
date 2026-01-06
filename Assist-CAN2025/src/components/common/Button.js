@@ -2,6 +2,15 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { colors, spacing, borderRadius, typography } from '../../styles/theme';
 
+// Button = bouton réutilisable.
+// Props principales:
+// - title: texte du bouton
+// - onPress: callback
+// - variant: style visuel (primary/secondary/accent/danger/outline)
+// - size: taille (small/medium/large)
+// - disabled: désactive le bouton
+// - loading: affiche un loader et désactive le bouton
+// - icon: icône optionnelle (ReactElement)
 const Button = ({
     title,
     onPress,
@@ -13,6 +22,7 @@ const Button = ({
     style,
     textStyle,
 }) => {
+    // Styles dynamiques en fonction du variant/size + états (disabled).
     const buttonStyles = [
         styles.button,
         styles[`button_${variant}`],
@@ -21,6 +31,7 @@ const Button = ({
         style,
     ];
 
+    // Styles du texte en fonction du variant/size + états (disabled).
     const textStyles = [
         styles.text,
         styles[`text_${variant}`],
@@ -33,13 +44,16 @@ const Button = ({
         <TouchableOpacity
             style={buttonStyles}
             onPress={onPress}
+            // On bloque les clics si disabled ou loading.
             disabled={disabled || loading}
             activeOpacity={0.7}
         >
+            {/* Si loading=true, on montre un ActivityIndicator à la place du contenu */}
             {loading ? (
                 <ActivityIndicator color={variant === 'primary' ? colors.neutral.white : colors.primary.green} />
             ) : (
                 <>
+                    {/* icon est optionnel (ex: <Text>🔍</Text> ou une icône SVG) */}
                     {icon && icon}
                     <Text style={textStyles}>{title}</Text>
                 </>

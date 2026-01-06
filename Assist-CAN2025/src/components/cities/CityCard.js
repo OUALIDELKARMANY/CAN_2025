@@ -3,9 +3,15 @@ import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import Card from '../common/Card';
 import { colors, spacing, typography } from '../../styles/theme';
 
+// Dimensions écran (utile pour calculer des largeurs si besoin).
 const { width } = Dimensions.get('window');
 
+// CityCard = carte UI pour afficher une ville dans une liste.
+// Props:
+// - city: objet ville (nom, population, description, image, lieuxTouristiques...)
+// - onPress: callback lorsque l'utilisateur sélectionne la ville
 const CityCard = ({ city, onPress }) => {
+    // Détecte si l'image est une URL (http...) ou une data URI.
     const hasImageUrl =
         typeof city?.image === 'string' &&
         (city.image.startsWith('http') || city.image.startsWith('data:image'));
@@ -13,6 +19,7 @@ const CityCard = ({ city, onPress }) => {
     return (
         <Card onPress={onPress} style={styles.card}>
             <View style={styles.imageContainer}>
+                {/* Si on a une URL valide, on affiche l'image, sinon un placeholder */}
                 {hasImageUrl ? (
                     <Image
                         source={{ uri: city.image }}

@@ -13,12 +13,21 @@ import Card from '../components/common/Card';
 import { colors, spacing, typography } from '../styles/theme';
 import hotelsData from '../data/hotels.json';
 
+// HotelsScreen = page "Hotels".
+// Rôle:
+// - afficher une liste d'hébergements (cartes)
+// - au clic: afficher une vue détails de l'hôtel sélectionné
+// Les données viennent de src/data/hotels.json (mode offline).
 const HotelsScreen = () => {
+    // hotels: liste chargée depuis le JSON.
     const [hotels] = useState(hotelsData.hotels);
+    // selectedHotel: si non null => on affiche la vue détails.
     const [selectedHotel, setSelectedHotel] = useState(null);
 
+    // Helper: détecte si une valeur ressemble à une URL d'image.
     const hasImageUrl = (value) => typeof value === 'string' && value.startsWith('http');
 
+    // Mode "détails".
     if (selectedHotel) {
         return (
             <View style={styles.container}>
@@ -64,6 +73,7 @@ const HotelsScreen = () => {
         );
     }
 
+    // Mode "liste".
     return (
         <View style={styles.container}>
             <Header title="Hotels" subtitle={`${hotels.length} hébergement${hotels.length > 1 ? 's' : ''}`} />

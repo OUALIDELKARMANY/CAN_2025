@@ -13,13 +13,22 @@ import Button from '../components/common/Button';
 import { colors, spacing, typography } from '../styles/theme';
 import emergencyData from '../data/emergencyContacts.json';
 
+// AssistanceScreen = page "Assistance & Sécurité".
+// Rôle:
+// - afficher des numéros d'urgence
+// - afficher des conseils, règles, FAQ
+// - permettre d'appeler un numéro via Linking (tel:)
+// Les données viennent de src/data/emergencyContacts.json.
 const AssistanceScreen = () => {
+    // expandedFaq: index de la question ouverte (accordéon), null => aucune ouverte.
     const [expandedFaq, setExpandedFaq] = useState(null);
 
+    // Lance un appel téléphonique via l'OS.
     const handleCall = (number) => {
         Linking.openURL(`tel:${number}`);
     };
 
+    // Ouvre/ferme une entrée FAQ.
     const toggleFaq = (index) => {
         setExpandedFaq(expandedFaq === index ? null : index);
     };

@@ -14,25 +14,40 @@ import Card from '../components/common/Card';
 import Button from '../components/common/Button';
 import { colors, spacing, typography, borderRadius } from '../styles/theme';
 import { getProfile, saveProfile, getFavoriteMatches } from '../utils/storage';
-import { getAfconFixtures } from '../services/apiSports';
+import matchesData from '../data/matches.json';
 
+// ProfileScreen = page "Mon Profil".
+// Rôle:
+// - afficher/modifier les infos utilisateur (nom, prénom, pays, équipe favorite)
+// - afficher la liste des matchs favoris (à partir des IDs stockés en local)
+// Note: la liste des matchs est lue depuis src/data/matches.json (mode offline).
 const ProfileScreen = () => {
+    // profile: informations utilisateur persistées dans AsyncStorage.
     const [profile, setProfile] = useState({
         nom: '',
         prenom: '',
         pays: '',
         equipe: '',
     });
+
+    // favoriteMatches: objets match correspondant aux IDs favoris (résolus via matches.json).
     const [favoriteMatches, setFavoriteMatches] = useState([]);
+
+    // isEditing: true => affiche le formulaire, false => affiche la vue lecture.
     const [isEditing, setIsEditing] = useState(false);
+
+    // loadingFavorites/favoritesError: états d'affichage de la section favoris.
     const [loadingFavorites, setLoadingFavorites] = useState(true);
     const [favoritesError, setFavoritesError] = useState(null);
 
+    // Au montage: charger profil + favoris.
     useEffect(() => {
         loadProfile();
         loadFavorites();
     }, []);
 
+    // Charge le profil depuis AsyncStorage.
+    // Si aucun profil n'existe, on passe directement en mode édition.
     const loadProfile = async () => {
         const savedProfile = await getProfile();
         if (savedProfile) {
@@ -42,6 +57,8 @@ const ProfileScreen = () => {
         }
     };
 
+    // Charge les IDs favoris depuis AsyncStorage puis reconstitue les objets match
+    // depuis le JSON local (matches.json).
     const loadFavorites = async () => {
         try {
             setLoadingFavorites(true);
@@ -53,8 +70,9 @@ const ProfileScreen = () => {
                 return;
             }
 
-            const matches = await getAfconFixtures({ season: 2025 });
-            const favMatches = matches.filter(m => favIds.includes(m.id));
+            // Résolution offline: on prend la liste complète et on filtre sur les IDs favoris.
+            const localMatches = Array.isArray(matchesData?.matches) ? matchesData.matches : [];
+            const favMatches = localMatches.filter((m) => favIds.includes(m.id));
             setFavoriteMatches(favMatches);
         } catch (e) {
             setFavoritesError(e?.message || 'Erreur lors du chargement des favoris');
@@ -64,6 +82,7 @@ const ProfileScreen = () => {
         }
     };
 
+    // Validation minimale + sauvegarde du profil.
     const handleSave = async () => {
         if (!profile.nom || !profile.prenom) {
             Alert.alert('Erreur', 'Veuillez remplir au moins votre nom et prénom');
@@ -79,6 +98,7 @@ const ProfileScreen = () => {
         }
     };
 
+    // Liste d'équipes proposée pour le choix "Équipe favorite".
     const teams = [
         'Maroc', 'Algérie', 'Tunisie', 'Égypte', 'Sénégal', 'Nigeria',
         'Cameroun', 'Côte d\'Ivoire', 'Ghana', 'Mali', 'Burkina Faso',

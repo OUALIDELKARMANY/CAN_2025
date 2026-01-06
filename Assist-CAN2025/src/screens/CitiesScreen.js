@@ -14,12 +14,21 @@ import Card from '../components/common/Card';
 import { colors, spacing, typography } from '../styles/theme';
 import citiesData from '../data/cities.json';
 
+// CitiesScreen = page "Villes Hôtes".
+// Rôle:
+// - afficher une liste des villes (CityCard)
+// - au clic sur une ville: afficher une page détails (description, lieux, conseils)
+// Les données viennent de src/data/cities.json (mode offline).
 const CitiesScreen = () => {
+    // cities: liste des villes chargée depuis le JSON.
     const [cities] = useState(citiesData.cities);
+    // selectedCity: si non null => on affiche la vue détails.
     const [selectedCity, setSelectedCity] = useState(null);
 
+    // Helper: détecte si une valeur ressemble à une URL d'image.
     const hasImageUrl = (value) => typeof value === 'string' && value.startsWith('http');
 
+    // Mode "détails" : si une ville est sélectionnée.
     if (selectedCity) {
         return (
             <View style={styles.container}>
@@ -82,6 +91,7 @@ const CitiesScreen = () => {
         );
     }
 
+    // Mode "liste" : affichage de toutes les villes.
     return (
         <View style={styles.container}>
             <Header

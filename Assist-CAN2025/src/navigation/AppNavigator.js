@@ -4,6 +4,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
 import { colors } from '../styles/theme';
 
+// Navigation principale de l'application.
+// Ici on utilise une Bottom Tab Navigation (barre d'onglets en bas).
+// Chaque Tab.Screen correspond à une "page" (screen) du dossier src/screens.
+
 // Screens
 import HomeScreen from '../screens/HomeScreen';
 import MatchesScreen from '../screens/MatchesScreen';
@@ -16,8 +20,10 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
     return (
+        // NavigationContainer = racine de React Navigation.
         <NavigationContainer>
             <Tab.Navigator
+                // screenOptions applique des options par défaut à tous les onglets.
                 screenOptions={{
                     headerShown: false,
                     tabBarActiveTintColor: colors.primary.green,
@@ -37,6 +43,7 @@ const AppNavigator = () => {
                 }}
             >
                 <Tab.Screen
+                    // "name" est l'identifiant interne de l'écran pour navigation.navigate('Home').
                     name="Home"
                     component={HomeScreen}
                     options={{
@@ -47,6 +54,7 @@ const AppNavigator = () => {
                     }}
                 />
                 <Tab.Screen
+                    // Onglet Matchs (écran MatchesScreen).
                     name="Matches"
                     component={MatchesScreen}
                     options={{
